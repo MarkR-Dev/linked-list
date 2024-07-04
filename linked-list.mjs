@@ -3,9 +3,10 @@ import Node from "./node.mjs";
 class LinkedList {
   constructor() {
     this.head = null;
+    this.length = 0;
   }
 
-  // Append new node to the head if the list is empty or loop until the tail and append
+  // Point head to new node if the list is empty or loop until the tail and append
   append(value) {
     const newNode = new Node(value);
     if (this.head === null) {
@@ -17,9 +18,10 @@ class LinkedList {
       }
       currentNode.next = newNode;
     }
+    this.length++;
   }
 
-  // Assign the current list to the new node's next pointer and point the head at the new node
+  // Assign the new node's next pointer to the current head and point the head at the new node
   prepend(value) {
     const newNode = new Node(value);
     if (this.head === null) {
@@ -28,10 +30,17 @@ class LinkedList {
       newNode.next = this.head;
       this.head = newNode;
     }
+    this.length++;
+  }
+
+  // Returns the current length of the list, decided to increment an object instance property over traversing the list and counting
+  size() {
+    return this.length;
   }
 
   log() {
     console.log("List:", this.head);
+    console.log("Size:", this.size());
   }
 }
 
