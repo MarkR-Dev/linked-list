@@ -33,9 +33,21 @@ class LinkedList {
     this.length++;
   }
 
-  // Returns the current length of the list, decided to increment an object instance property over traversing the list and counting
+  // Returns the current length of the list, decided to increment an object instance property over traversing the list and counting repeatedly
   size() {
     return this.length;
+  }
+
+  getHead() {
+    return this.head;
+  }
+
+  getTail() {
+    let currentNode = this.head;
+    while (currentNode.next !== null) {
+      currentNode = currentNode.next;
+    }
+    return currentNode;
   }
 
   log() {
