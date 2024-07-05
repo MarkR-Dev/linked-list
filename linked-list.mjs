@@ -50,6 +50,21 @@ class LinkedList {
     return currentNode;
   }
 
+  at(targetIndex) {
+    // Check to see if the list is empty and if the targeted index is below/above the bounds of the list.
+    // List index begins at 0, and an empty list has a 0 length property so we minus 1 to account for that.
+    if (targetIndex < 0 || targetIndex > this.length - 1) {
+      return null;
+    }
+    let currentIndex = 0;
+    let currentNode = this.head;
+    while (currentIndex < targetIndex) {
+      currentNode = currentNode.next;
+      currentIndex++;
+    }
+    return currentNode;
+  }
+
   log() {
     console.log("List:", this.head);
     console.log("Size:", this.size());
