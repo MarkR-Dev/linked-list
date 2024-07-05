@@ -54,9 +54,9 @@ class LinkedList {
     return currentNode;
   }
 
+  // Check to see if the list is empty and if the targeted index is below/above the bounds of the list.
+  // List index begins at 0, and an empty list has a 0 length property so we minus 1 to account for that.
   at(targetIndex) {
-    // Check to see if the list is empty and if the targeted index is below/above the bounds of the list.
-    // List index begins at 0, and an empty list has a 0 length property so we minus 1 to account for that.
     if (targetIndex < 0 || targetIndex > this.length - 1) {
       return null;
     }
@@ -84,6 +84,24 @@ class LinkedList {
       }
       this.length--;
     }
+  }
+
+  contains(targetValue) {
+    if (this.head === null) {
+      return false;
+    }
+
+    let currentNode = this.head;
+    while (currentNode.next !== null) {
+      if (currentNode.value === targetValue) {
+        return true;
+      }
+      currentNode = currentNode.next;
+    }
+    if (currentNode.value === targetValue) {
+      return true;
+    }
+    return false;
   }
 
   log() {

@@ -8,3 +8,5 @@ Project to practice creating and using a linked list.
 - Get Head
 - Get Tail
 - At(index)
+- Pop
+- Contains(value)
