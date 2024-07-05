@@ -43,6 +43,10 @@ class LinkedList {
   }
 
   getTail() {
+    if (this.head === null) {
+      return null;
+    }
+
     let currentNode = this.head;
     while (currentNode.next !== null) {
       currentNode = currentNode.next;
