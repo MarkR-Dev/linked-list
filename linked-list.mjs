@@ -69,6 +69,23 @@ class LinkedList {
     return currentNode;
   }
 
+  pop() {
+    if (this.head !== null) {
+      if (this.length === 1) {
+        this.head = null;
+      } else {
+        let prevNode = null;
+        let currentNode = this.head;
+        while (currentNode.next !== null) {
+          prevNode = currentNode;
+          currentNode = currentNode.next;
+        }
+        prevNode.next = null;
+      }
+      this.length--;
+    }
+  }
+
   log() {
     console.log("List:", this.head);
     console.log("Size:", this.size());
