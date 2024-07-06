@@ -2,6 +2,8 @@
 
 Project to practice creating and using a linked list.
 
+Methods available to the linked list:
+
 - Append
 - Prepend
 - Size
@@ -11,3 +13,5 @@ Project to practice creating and using a linked list.
 - Pop
 - Contains(value)
 - Find(value)
+- To String
+- Log

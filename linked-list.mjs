@@ -60,8 +60,10 @@ class LinkedList {
     if (targetIndex < 0 || targetIndex > this.length - 1) {
       return null;
     }
+
     let currentIndex = 0;
     let currentNode = this.head;
+
     while (currentIndex < targetIndex) {
       currentNode = currentNode.next;
       currentIndex++;
@@ -110,8 +112,21 @@ class LinkedList {
     return null;
   }
 
+  toString() {
+    let currentNode = this.head;
+    let listString = "";
+
+    while (currentNode !== null) {
+      listString += `( ${currentNode.value} ) -> `;
+      currentNode = currentNode.next;
+    }
+    listString += "null";
+
+    return listString;
+  }
+
   log() {
-    console.log("List:", this.head);
+    console.log("List:", this.toString());
     console.log("Size:", this.size());
   }
 }
