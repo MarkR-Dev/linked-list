@@ -4,8 +4,8 @@ Project to practice creating and using a linked list.
 
 Methods available to the linked list:
 
-- Append
-- Prepend
+- Append(value)
+- Prepend(value)
 - Size
 - Get Head
 - Get Tail
@@ -15,3 +15,4 @@ Methods available to the linked list:
 - Find(value)
 - To String
 - Log
+- Insert At(value, index)

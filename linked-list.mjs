@@ -129,6 +129,31 @@ class LinkedList {
     console.log("List:", this.toString());
     console.log("Size:", this.size());
   }
+
+  // Check for empty list or trying to insert out of upper bounds first,
+  // otherwise traverse until before the insertion index and swap next node referencess for respective nodes
+  insertAt(value, targetIndex) {
+    const newNode = new Node(value);
+    if (this.head === null || targetIndex > this.length - 1) {
+      this.append(value);
+      return;
+    } else if (targetIndex === 0) {
+      this.prepend(value);
+      return;
+    }
+    let prevNode = null;
+    let currentNode = this.head;
+    let currentIndex = 0;
+
+    while (currentIndex < targetIndex) {
+      prevNode = currentNode;
+      currentNode = currentNode.next;
+      currentIndex++;
+    }
+    newNode.next = currentNode;
+    prevNode.next = newNode;
+    this.length++;
+  }
 }
 
 export default LinkedList;
