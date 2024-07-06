@@ -10,3 +10,4 @@ Project to practice creating and using a linked list.
 - At(index)
 - Pop
 - Contains(value)
+- Find(value)

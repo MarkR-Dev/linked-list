@@ -33,7 +33,7 @@ class LinkedList {
     this.length++;
   }
 
-  // Returns the current length of the list, decided to increment an object instance property over traversing the list and counting repeatedly
+  // Returns the current length of the list, increments an object instance length property over traversing the list and counting repeatedly
   size() {
     return this.length;
   }
@@ -54,8 +54,8 @@ class LinkedList {
     return currentNode;
   }
 
-  // Check to see if the list is empty and if the targeted index is below/above the bounds of the list.
-  // List index begins at 0, and an empty list has a 0 length property so we minus 1 to account for that.
+  // Check to see if the list is empty or if the targeted index is below/above the bounds of the list
+  // List index begins at 0, and an empty list has a 0 length property so minus 1 to account for that
   at(targetIndex) {
     if (targetIndex < 0 || targetIndex > this.length - 1) {
       return null;
@@ -87,21 +87,27 @@ class LinkedList {
   }
 
   contains(targetValue) {
-    if (this.head === null) {
-      return false;
-    }
-
     let currentNode = this.head;
-    while (currentNode.next !== null) {
+    while (currentNode !== null) {
       if (currentNode.value === targetValue) {
         return true;
       }
       currentNode = currentNode.next;
     }
-    if (currentNode.value === targetValue) {
-      return true;
-    }
     return false;
+  }
+
+  find(targetValue) {
+    let currentNode = this.head;
+    let currentIndex = 0;
+    while (currentNode !== null) {
+      if (currentNode.value === targetValue) {
+        return currentIndex;
+      }
+      currentNode = currentNode.next;
+      currentIndex++;
+    }
+    return null;
   }
 
   log() {
