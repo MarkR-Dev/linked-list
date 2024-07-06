@@ -16,3 +16,4 @@ Methods available to the linked list:
 - To String
 - Log
 - Insert At(value, index)
+- Remove At(index)
